@@ -39,19 +39,20 @@ $(function()
             {
             expect(body.hasClass('menu-hidden')).toBe(true); 
             })
-      ///////////////////////////Test(5)//////////////////////////////
-        it("changes visibility when is clicked",function()
-            {
-            let oldclass = document.body.className;
-            
-            menuButton.click();
-            let newclass = document.body.className;
-            expect(newclass).not.toBe(oldclass);
+      //////////////////////updated code/////////////////////////////
+       it('clicked menu is displayed', function(){
+            menuButton.click(); // When the menu icon is clicked 
+            expect(body.hasClass('.menu-hidden')).toBe(false); 
+           
+        });
 
-            menuButton.click();//click again 
-            expect(oldclass).not.toBe(newclass);
-            })
-            })
+       it('menu clicked again disappears', function(){
+           menuButton.click(); //When menu icon will be clicked again,
+           expect(body.hasClass('slide-menu')).toBe(false); 
+         
+        });
+      /////////////////updated code/////////////////////////////
+      });
      ////////////////////////////Test(6)//////////////////////////////
     describe("Initial Entries",function()
     {
